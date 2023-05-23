@@ -1,5 +1,6 @@
 # ignore all files by default (do not change this)
 *
+!*/
 
 # whitelist - prettier check these files
 !*.ts
@@ -8,10 +9,7 @@
 !*.json
 !*.cjs
 
-# recurse into directories (do not change this)
-!*/
-
 # blacklist - prettier ignore these directories
-.svelte-kit
-build
-dist
+/.svelte-kit
+/build
+/dist
