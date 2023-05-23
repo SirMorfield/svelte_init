@@ -1,4 +1,4 @@
-# ignore all files by default (do not change this)
+# ignore all files by default (do not change these)
 *
 !*/
 
@@ -8,6 +8,7 @@
 !*.js
 !*.json
 !*.cjs
+!.prettierrc
 
 # blacklist - prettier ignore these directories
 /.svelte-kit
