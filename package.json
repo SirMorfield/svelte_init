@@ -10,8 +10,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:unit": "vitest",
-		"lint:check": "prettier --plugin-search-dir . --check . && eslint .",
-		"lint:fix": "prettier --plugin-search-dir . --write . && eslint --fix ."
+		"lint:check": "prettier --plugin-search-dir . --check . && eslint --cache --cache-location node_modules/.eslintcache .",
+		"lint:fix": "prettier --plugin-search-dir . --write . && eslint --cache --cache-location node_modules/.eslintcache --fix ."
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
