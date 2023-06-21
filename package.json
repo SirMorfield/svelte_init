@@ -2,16 +2,19 @@
 	"name": "myapp",
 	"version": "0.0.1",
 	"private": true,
+	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
+		"start": "vite --host",
 		"build": "vite build",
-		"preview": "vite preview",
-		"test": "playwright test",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"sync": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"test:browser": "playwright test",
 		"test:unit": "vitest",
-		"lint:check": "prettier --plugin-search-dir . --check . && eslint --cache --cache-location node_modules/.eslintcache .",
-		"lint:fix": "prettier --plugin-search-dir . --write . && eslint --cache --cache-location node_modules/.eslintcache --fix ."
+		"lint:check": "prettier --plugin-search-dir . --check . && DEBUG=eslint:cli-engine eslint --cache --cache-location node_modules/.eslintcache .",
+		"lint:fix": "prettier --plugin-search-dir . --write . && DEBUG=eslint:cli-engine eslint --cache --cache-location node_modules/.eslintcache --fix ."
+	},
+	"dependencies": {
+		"vite": "^4.3.0"
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.28.1",
@@ -19,20 +22,15 @@
 		"@sveltejs/kit": "^1.5.0",
 		"@typescript-eslint/eslint-plugin": "^5.45.0",
 		"@typescript-eslint/parser": "^5.45.0",
-		"eslint": "^8.28.0",
 		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-prettier": "^4.2.1",
 		"eslint-plugin-svelte": "^2.26.0",
-		"prettier": "^2.8.0",
+		"eslint": "^8.28.0",
 		"prettier-plugin-svelte": "^2.8.1",
-		"svelte": "^3.54.0",
 		"svelte-check": "^3.0.1",
+		"svelte": "^3.54.0",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
-		"vite": "^4.3.0",
 		"vitest": "^0.25.3"
-	},
-	"type": "module",
-	"dependencies": {
-		"eslint-plugin-prettier": "^4.2.1"
 	}
 }

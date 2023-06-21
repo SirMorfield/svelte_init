@@ -1,12 +1,12 @@
 {
-	"tabWidth": 4,
-	"useTabs": true,
+	"arrowParens": "avoid",
+	"bracketSameLine": true,
 	"printWidth": 120,
 	"semi": false,
 	"singleQuote": true,
+	"tabWidth": 4,
 	"trailingComma": "all",
-	"bracketSameLine": true,
-	"arrowParens": "avoid",
+	"useTabs": true,
 
 	"plugins": ["prettier-plugin-svelte"],
 	"pluginSearchDirs": ["."],
