@@ -16,15 +16,14 @@ RUN npm run lint:check
 
 ENV NODE_ENV=production
 RUN npm run build
-RUN npm prune --production
 
 # =============== MAIN ===============
-FROM node:18-alpine as main
+FROM gcr.io/distroless/nodejs:18 as main
 ENV NODE_ENV=production
+ENV PORT=5173
 WORKDIR /app
 
-COPY --from=builder-main /app/node_modules ./node_modules
-COPY --from=builder-main /app/.svelte-kit ./.svelte-kit
-COPY --from=builder-main /app/package.json ./
+COPY --from=builder-main /app/package.json ./package.json
+COPY --from=builder-main /app/build ./build
 
-ENTRYPOINT [ "npm", "start" ]
+CMD [ "build/index.js" ]
